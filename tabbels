@@ -79,9 +79,44 @@ INSERT INTO db_university_schema.degrees
 (name, address, `level`, email, website, department_id)
 VALUES('Storia_contemporanea', 'Via Roma, 71', 26, 'sapienza.storia@departement.it', 'www.sapienza/storia.it', 2);
 
+INSERT INTO db_university_schema.degrees
+(name, address, `level`, email, website, department_id)
+VALUES('Storia_medievale', 'Via Roma, 71', 30, 'sapienza.storia@departement.it', 'www.sapienza/storia.it', 2);
+
+INSERT INTO db_university_schema.degrees
+(name, address, `level`, email, website, department_id)
+VALUES('Archeologia_forense', 'Via Roma, 74', 19, 'sapienza.archeologia@departement.it', 'www.sapienza/archeologia.it', 3);
+
+INSERT INTO db_university_schema.degrees
+(name, address, `level`, email, website, department_id)
+VALUES('Botanica_morfofunzionale', 'Via Sirio, 24', 23, 'sapienza.botanica@departement.it', 'www.sapienza/botanica.it', 6);
+
+INSERT INTO db_university_schema.degrees
+(name, address, `level`, email, website, department_id)
+VALUES('Anatomia', 'Via Sirio, 32', 20, 'sapienza.zoologia@departement.it', 'www.sapienza/zoologia.it', 5);
+
+INSERT INTO db_university_schema.degrees
+(name, address, `level`, email, website, department_id)
+VALUES('Geografia_fisica', 'Via Roma, 74', 29, 'sapienza.archeologia@departement.it', 'www.sapienza/archeologia.it', 3);
+
 -- aggiungo dati degli studenti
 
 INSERT INTO db_university_schema.students
 (name, surname, date_of_birth, fiscal_code, enrolment_date, registration_number, email, degree_id)
 VALUES('Iginio', 'Massacri', '1954/11/09', 'IGNMSSR54R09R', '2010/07/12', 1472, 'iginioilgrande@libero.it', 1);
 
+INSERT INTO db_university_schema.students
+(name, surname, date_of_birth, fiscal_code, enrolment_date, registration_number, email, degree_id)
+VALUES('Ringo', 'Star', '1944/10/09', 'RGSTR54R09R0', '2000/07/10', 2451, 'ringostar@proton.me', 2);
+
+INSERT INTO db_university_schema.students
+(name, surname, date_of_birth, fiscal_code, enrolment_date, registration_number, email, degree_id)
+VALUES('Fringilla', 'Vigo', '1994/11/09', 'FRGVGO201RN0D', '2011/07/12', 1471, 'fringillona@gmail.com', 3);
+
+INSERT INTO db_university_schema.students
+(name, surname, date_of_birth, fiscal_code, enrolment_date, registration_number, email, degree_id)
+VALUES('Giacomino', 'Nurdi', '2002/04/29', 'GCMNR204NU8F', '2020/06/12', 4210, 'giacomoNurd@libero.it', 1);
+
+INSERT INTO db_university_schema.students
+(name, surname, date_of_birth, fiscal_code, enrolment_date, registration_number, email, degree_id)
+VALUES('Maria', 'Rosaria', '2001/07/14', 'MRRS37RN3F', '2019/07/10', 3912, 'Rosarias@libero.it', 5);
