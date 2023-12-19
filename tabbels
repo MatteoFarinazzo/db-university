@@ -1,0 +1,80 @@
+CREATE TABLE `departments`(
+	name VARCHAR (100),
+	address VARCHAR (255),
+	phone INT,
+	email VARCHAR (50),
+	website VARCHAR (255),
+	head_of_department VARCHAR (255),
+	id INT NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE `degrees`(
+	name VARCHAR (100),
+	address VARCHAR (255),
+	`level` INT,
+	email VARCHAR (50),
+	website VARCHAR (255),
+	id INT NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (id)
+);
+
+ALTER TABLE `degrees`
+ADD COLUMN department_id INT;
+
+ALTER TABLE `degrees`
+ADD FOREIGN KEY (department_id) REFERENCES departments(id);
+
+
+CREATE TABLE `students`(
+	name VARCHAR (100),
+	surname VARCHAR (100),
+	date_of_birth DATE,
+	fiscal_code VARCHAR(20),
+	enrolment_date DATE,
+	registration_number INT,
+	email VARCHAR (50),
+	id INT NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (id)
+);
+
+ALTER TABLE `students`
+ADD COLUMN degree_id INT;
+
+ALTER TABLE `students`
+ADD FOREIGN KEY (degree_id) REFERENCES degrees(id);
+
+-- INSERIMENTO DATI
+
+INSERT INTO departments (name, address, phone, email, website, head_of_department)
+VALUES('Storia', 'Via Roma, 71', 333.3333333, 'sapienza.storia@departement.it', 'www.sapienza/storia.it', 'Ermenegildo Sussurri');
+
+DELETE FROM departments WHERE id = 1;
+
+-- Linea cancellata perché il numero di telefono non era un intero
+
+INSERT INTO departments (name, address, phone, email, website, head_of_department)
+VALUES('Storia', 'Via Roma, 71', 33333333, 'sapienza.storia@departement.it', 'www.sapienza/storia.it', 'Ermenegildo Sussurri');
+
+INSERT INTO departments (name, address, phone, email, website, head_of_department)
+VALUES('Archeologia', 'Via Roma, 74', 4333333, 'sapienza.archeologia@departement.it', 'www.sapienza/archeologia.it', 'Henrey Rhoades');
+
+INSERT INTO departments (name, address, phone, email, website, head_of_department)
+VALUES('Archeologia', 'Via Roma, 74', 4433333, 'sapienza.archeologia@departement.it', 'www.sapienza/archeologia.it', 'Henrey Rhoades');
+
+-- Modifico inserimento ultimo record
+
+UPDATE departments SET name='Fisica', address='Via Roma, 01', phone=442444, email='sapienza.fisica@departement.it', website='www.sapienza/fisica.it', head_of_department='Friginio Ridoli' WHERE id=4;
+
+INSERT INTO departments (name, address, phone, email, website, head_of_department)
+VALUES('Zoologia', 'Via Sirio, 32', 4433433, 'sapienza.zoologiaa@departement.it', 'www.sapienza/zoologia.it', 'Raimondo Fulvi');
+
+INSERT INTO departments (name, address, phone, email, website, head_of_department)
+VALUES('Botanica', 'Via Sirio, 24', 4433444, 'sapienza.botanica@departement.it', 'www.sapienza/botanica.it', 'Gennaro Panzaro');
+
+
+-- aggiungo dati agli studenti
+
+INSERT INTO db_university_schema.degrees
+(name, address, `level`, email, website, id, department_id)
+VALUES('', '', 0, '', '', 0, 0);
