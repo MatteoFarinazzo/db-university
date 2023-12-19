@@ -73,8 +73,15 @@ INSERT INTO departments (name, address, phone, email, website, head_of_departmen
 VALUES('Botanica', 'Via Sirio, 24', 4433444, 'sapienza.botanica@departement.it', 'www.sapienza/botanica.it', 'Gennaro Panzaro');
 
 
--- aggiungo dati agli studenti
+-- aggiungo dati ai degrees
 
 INSERT INTO db_university_schema.degrees
-(name, address, `level`, email, website, id, department_id)
-VALUES('', '', 0, '', '', 0, 0);
+(name, address, `level`, email, website, department_id)
+VALUES('Storia_contemporanea', 'Via Roma, 71', 26, 'sapienza.storia@departement.it', 'www.sapienza/storia.it', 2);
+
+-- aggiungo dati degli studenti
+
+INSERT INTO db_university_schema.students
+(name, surname, date_of_birth, fiscal_code, enrolment_date, registration_number, email, degree_id)
+VALUES('Iginio', 'Massacri', '1954/11/09', 'IGNMSSR54R09R', '2010/07/12', 1472, 'iginioilgrande@libero.it', 1);
+
